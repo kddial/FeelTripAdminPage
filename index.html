@@ -35,6 +35,8 @@
 
 
       <h2> Create an Event</h2>
+
+
         <form id="eventForm">
         <label for="nameInput">Event Name</label>
         <input class="u-full-width eventInput" type="text" placeholder="Beach party" id="nameInput" required>
@@ -84,9 +86,12 @@
         <input class="u-full-width eventInput" type="email" placeholder="test@test.com" id="emailInput">
 
         <input class="button-primary" id="submit-button" type="submit" value="Save event">
-        <button id="status-button">&nbsp;</button>
+
+        <button id="loading-blank-button" style="width:300px;"> ---------- </button>
+        <button id="loading-button" style="width:300px;"> <div id="load-text"> Loading </div> </button>
 
       </form>
+      <button id="sample-event">Fill in test Event</button>
 
 
     </div>

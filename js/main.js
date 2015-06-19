@@ -3,17 +3,17 @@
 var api = JSON.parse(config);
 Parse.initialize(api.app_key, api.js_key);
 
-// new Event object
-
-
-
+/* Apply code once page has loaded */
 $(document).ready(function() {
-
   // prevent inputs from saving values
   $("form :input").attr("autocomplete", "off");
 
-  // startSubmit();
-  // setTimeout(function() {endSubmit();}, 2000);
+  // fill in sample event
+  sampleEvent();
+
+  // animate loading button
+  animateLoadingButton();
+  $("#loading-button").hide();
 
   // Submit function
   $("#eventForm").on("submit", function(e) {
@@ -44,15 +44,14 @@ $(document).ready(function() {
       data.image = imageObject;
     }
 
-
     // Save the event to Parse
     var event = Parse.Object.extend("Events");
     var eventObject = new event();
     eventObject.save(data, {
       success:function() {
       console.log("succes!");
-      alert("saved!");
       endSubmit("saved!");
+      alert("saved!");
 
       // back to top of page
       $("html, body").animate({scrollTop: 0}, 200);
@@ -65,10 +64,10 @@ $(document).ready(function() {
          .removeAttr('selected');
       },
       error:function(error) {
-        alert("error!");
         console.log("error!");
         console.dir(error);
         endSubmit();
+        alert("error!");
       }
     });
 
@@ -79,16 +78,58 @@ $(document).ready(function() {
 /* Disable button while processing submission */
 function startSubmit() {
   $("#submit-button").prop("disabled", true);
-  $("#status-button").html("loading");
 
-
-
+  $("#loading-blank-button").hide();
+  $("#loading-button").show();
 }
 
 /* Re-enable button after processed submission */
 function endSubmit() {
   $("#submit-button").prop("disabled", false);
-  $("#status-button").html("&nbsp;");
+  loading = false;
+
+  $("#loading-blank-button").show();
+  $("#loading-button").hide();
 }
 
 
+/* Fill in sample event info */
+function sampleEvent() {
+  $("#sample-event").click(function() {
+    $("#nameInput").prop("value", "test");
+    $("#descriptionInput").prop("value", "test");
+    $("#addressInput").prop("value", "test event");
+    $("#priceInput").prop("value", 22);
+    $("#dateStartInput").prop("value", "[2015, 4, 22, 13, 0, 0]");
+    $("#dateEndInput").prop("value", "[2015, 4, 22, 13, 0, 0]");
+    $("#moodInput").prop("value", "[2]");
+    $("#hashTagsInput").prop("value", "[#test]");
+    $("#websiteInput").prop("value", "www.kevindial.com");
+    $("#phoneInput").prop("value", "4161234567");
+    $("#emailInput").prop("value", "kk@kk.com");
+  });
+}
+
+/* Fade loading in and out */
+function animateLoadingButton() {
+    var items = ["Loading", "Loading.", "Loading..", "Loading...", "Loading....", "Loading....."],
+        $text = $( '#load-text' ),
+        delay = 1; //seconds
+    function loop ( delay ) {
+        $.each( items, function ( i, elm ){
+            $text.delay( delay*1E3).fadeOut();
+            $text.queue(function(){
+                $text.html( items[i] );
+                $text.dequeue();
+            });
+            $text.fadeIn();
+            $text.queue(function(){
+                if ( i == items.length -1 ) {
+                    loop(delay);   
+                }
+                $text.dequeue();
+            });
+        });
+    }
+    loop( delay );
+}
