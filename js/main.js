@@ -9,13 +9,17 @@ Parse.initialize(api.app_key, api.js_key);
 
 $(document).ready(function() {
 
-  // turn off form saved values
+  // prevent inputs from saving values
   $("form :input").attr("autocomplete", "off");
+
+  // startSubmit();
+  // setTimeout(function() {endSubmit();}, 2000);
 
   // Submit function
   $("#eventForm").on("submit", function(e) {
-      e.preventDefault();
+    e.preventDefault();
     console.log("Handling the submit");
+    startSubmit();
 
     // get the event data
     var data = {};
@@ -48,6 +52,7 @@ $(document).ready(function() {
       success:function() {
       console.log("succes!");
       alert("saved!");
+      endSubmit("saved!");
 
       // back to top of page
       $("html, body").animate({scrollTop: 0}, 200);
@@ -58,13 +63,32 @@ $(document).ready(function() {
          .val('')
          .removeAttr('checked')
          .removeAttr('selected');
-    },
-    error:function(error) {
-      console.log("error!");
-      console.dir(error);
-    }
+      },
+      error:function(error) {
+        alert("error!");
+        console.log("error!");
+        console.dir(error);
+        endSubmit();
+      }
     });
 
 
   });
 });
+
+/* Disable button while processing submission */
+function startSubmit() {
+  $("#submit-button").prop("disabled", true);
+  $("#status-button").html("loading");
+
+
+
+}
+
+/* Re-enable button after processed submission */
+function endSubmit() {
+  $("#submit-button").prop("disabled", false);
+  $("#status-button").html("&nbsp;");
+}
+
+

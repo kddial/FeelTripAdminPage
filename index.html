@@ -35,12 +35,12 @@
 
 
       <h2> Create an Event</h2>
-      <form id="eventForm">
+        <form id="eventForm">
         <label for="nameInput">Event Name</label>
         <input class="u-full-width eventInput" type="text" placeholder="Beach party" id="nameInput" required>
         
         <label for="descriptionInput">Event Description</label>
-        <input class="u-full-width eventInput" type="text" placeholder="Let's have some fun in the sun! Bring your friends, family, dogs, beers, food, smiles!" id="descriptionInput" required>
+        <input class="u-full-width eventInput" type="text" placeholder="Let's have some fun in the sun! Bring your friends, family, dogs, beers, food, smiles!" id="descriptionInput" `>
         
         <label for="addressInput">Address</label>
         <input class="u-full-width eventInput" type="text" placeholder="909 Lake Shore Boulevard West, Toronto, ON M6K 3L3" id="addressInput" required>
@@ -70,23 +70,23 @@
         <label for="hashTagsInput">Hashtags </br>
         <div class="exampleEvent">Example: [#bbq, #food, #outdoor, #summer, #music] </div></label>
         <input class="u-full-width eventInput" type="text" placeholder="[#bbq, #food, #outdoor, #summer, #music]" id="hashTagsInput" required>
-
-        <h6> *Please fill in one of the following: Website, Phone Number of Email* </h6>
+        <br><br>
+        <h5> *Please fill in one of the following: Website, Phone Number of Email* </h5>
 
         <label for="websiteInput">Website</label>
         <input class="u-full-width eventInput" type="text" placeholder="www.kevindial.com/is_the_best" id="websiteInput">
 
         <label for="phoneInput">Phone Number </br>
         <div class="exampleEvent">Format: 4161234567</div></label>
-        <input class="u-full-width eventInput" type="text" placeholder="4161234567" id="phoneInput">
+        <input class="u-full-width eventInput" type="number" placeholder="4161234567" id="phoneInput">
 
         <label for="emailInput">Email Address</label>
         <input class="u-full-width eventInput" type="email" placeholder="test@test.com" id="emailInput">
 
-        <input class="button-primary" type="submit" value="Save event">
+        <input class="button-primary" id="submit-button" type="submit" value="Save event">
+        <button id="status-button">&nbsp;</button>
+
       </form>
-
-
 
 
     </div>
