@@ -88,6 +88,7 @@ function endSubmit() {
   $("#submit-button").prop("disabled", false);
   loading = false;
 
+  $("#loading-blank-button").html("done");
   $("#loading-blank-button").show();
   $("#loading-button").hide();
 }

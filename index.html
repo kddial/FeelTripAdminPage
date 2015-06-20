@@ -56,24 +56,29 @@
         <label for="dateStartInput">Start Date  </br>
         <div class="exampleEvent">Format: [year, month, day, hour, minute, second] </br>
         Example: [2015, 4, 22, 13, 0, 0] == April 22, 2015, 1 PM </br>
-        Use 0 minutes and 0 seconds if you don't know them</div></label>
-        <input class="u-full-width eventInput" type="text" placeholder="[2015, 4, 22, 13, 0, 0]" id="dateStartInput" required>
+        Use 0 minutes and 0 seconds if you don't know them <br>
+        Make sure there are <b>6 numbers</b> inside <b>square brackets</b></div></label>
+        <input class="u-full-width eventInput" type="text" placeholder="[2015, 4, 22, 13, 0, 0]" id="dateStartInput" pattern="[\[]\s*\d+\s*,\s*\d+\s*,\s*\d+\s*,\s*\d+\s*,\s*\d+\s*,\s*\d+\s*[\]]" required>
 
         <label for="dateEndInput">End Date  </br>
         <div class="exampleEvent">Format: [year, month, day, hour, minute, second] </br>
         Example: [2015, 4, 22, 13, 0, 0] == April 22, 2015, 1 PM </br>
-        Use 0 minutes and 0 seconds if you don't know them</div></label>
-        <input class="u-full-width eventInput" type="text" placeholder="[2015, 4, 22, 13, 0, 0]" id="dateEndInput" required>
+        Use 0 minutes and 0 seconds if you don't know them <br>
+        Make sure there are <b>6 numbers</b> inside <b>square brackets</b></div></label>
+        <input class="u-full-width eventInput" type="text" placeholder="[2015, 4, 22, 13, 0, 0]" id="dateEndInput" pattern="[\[]\s*\d+\s*,\s*\d+\s*,\s*\d+\s*,\s*\d+\s*,\s*\d+\s*,\s*\d+\s*[\]]" required>
 
         <label for="moodInput">Mood </br>
-        <div class="exampleEvent">Example: [1] or [1, 2] </div></label>
-        <input class="u-full-width eventInput" type="text" placeholder="[1, 2]" id="moodInput" required>
+        <div class="exampleEvent">Example: [1] or [1, 2] <br>
+        Make sure the numbers are in the <b>range [1-4]</b> inside <b>square brackets</b></div></label>
+        <input class="u-full-width eventInput" type="text" placeholder="[1, 2]" id="moodInput" pattern="[\[]\s*([1-4]+\s*,\s*)*(\s*[1-4]+\s*)[\]]" required>
 
         <label for="hashTagsInput">Hashtags </br>
-        <div class="exampleEvent">Example: [#bbq, #food, #outdoor, #summer, #music] </div></label>
-        <input class="u-full-width eventInput" type="text" placeholder="[#bbq, #food, #outdoor, #summer, #music]" id="hashTagsInput" required>
+        <div class="exampleEvent">Example: [#bbq, #food, #outdoor, #summer, #music] <br>
+        Make sure each hashtag <b> begins with # </b> inside <b>square brackets</b></div></label>
+        <input class="u-full-width eventInput" type="text" placeholder="[#bbq, #food, #outdoor, #summer, #music]" id="hashTagsInput" pattern="[\[]\s*(#\w+\s*,\s*)*(\s*#\w+\s*)[\]]" required>
         <br><br>
         <h5> *Please fill in one of the following: Website, Phone Number of Email* </h5>
+        <!-- regex credits to Jiwoo -->
 
         <label for="websiteInput">Website</label>
         <input class="u-full-width eventInput" type="text" placeholder="www.kevindial.com/is_the_best" id="websiteInput">
@@ -87,7 +92,7 @@
 
         <input class="button-primary" id="submit-button" type="submit" value="Save event">
 
-        <button id="loading-blank-button" style="width:300px;" disabled> ---------- </button>
+        <button id="loading-blank-button" style="width:300px;" disabled> &nbsp; </button>
         <button id="loading-button" style="width:300px;" disabled> <div id="load-text"> Loading </div> </button>
 
       </form>
