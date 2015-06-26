@@ -1,5 +1,5 @@
 // set page version to tell clients correct version
-var pageVersion = 2;
+var pageVersion = 3;
 
 // initialize Parse api
 var api = JSON.parse(config);
