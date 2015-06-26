@@ -1,5 +1,5 @@
 // set page version to tell clients correct version
-var pageVersion = 3;
+var pageVersion = 4;
 
 // initialize Parse api
 var api = JSON.parse(config);
@@ -40,8 +40,15 @@ $(document).ready(function() {
     data.website = $("#websiteInput").val();
     
     // number input
-    data.price = JSON.parse($("#priceInput").val());
-    data.phone_number = JSON.parse($("#phoneInput").val());
+    var priceInput = $("#priceInput").val().trim();
+    if (priceInput){
+      data.price = JSON.parse(priceInput);
+    };
+
+    var phoneInput = $("#phoneInput").val().trim();
+    if (phoneInput) {
+      data.phone_number = JSON.parse(phoneInput);
+    };
 
     // array input
     data.mood = $("#moodInput").val().split(",").map(Number).filter(Boolean);
