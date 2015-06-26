@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="css/skeleton.css">
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     <script src="js/vendor/parse-1.4.2.min.js"></script>
+    <script src="js/vendor/moment.min.js"></script>
     <script type="text/javascript" src="js/config.json"></script>
 
       <!-- FONT
@@ -34,56 +35,66 @@
     <div class="container" style="margin-top: 40px">
 
 
-      <h2> Create an Event</h2>
-
-
+      <h2> Create an Event</h2> <h6 id="page-version"></h6>
         <form id="eventForm">
+
+        <!-- Required -->
         <label for="nameInput">Event Name</label>
         <input class="u-full-width eventInput" type="text" placeholder="Beach party" id="nameInput" required>
         
+        <!-- Required -->
         <label for="descriptionInput">Event Description</label>
-        <input class="u-full-width eventInput" type="text" placeholder="Let's have some fun in the sun! Bring your friends, family, dogs, beers, food, smiles!" id="descriptionInput" `>
+        <input class="u-full-width eventInput" type="text" placeholder="Let's have some fun in the sun! Bring your friends, family, dogs, beers, food, smiles!" id="descriptionInput" required>
         
+        <!-- Required -->
         <label for="addressInput">Address</label>
         <input class="u-full-width eventInput" type="text" placeholder="909 Lake Shore Boulevard West, Toronto, ON M6K 3L3" id="addressInput" required>
 
+        <!-- Required -->
         <label for="priceInput">Price</label>
         <input class="u-full-width eventInput" type="number" placeholder="25" id="priceInput" required>
         
+        <!-- Required -->
         <label for="imageInput">Image</label>
         <input class="u-full-width eventInput" type="file" id="imageInput" required>
 
-        <label for="dateStartInput">Start Date  </br>
-        <div class="exampleEvent">Format: [year, month, day, hour, minute, second] </br>
-        Example: [2015, 4, 22, 13, 0, 0] == April 22, 2015, 1 PM </br>
-        Use 0 minutes and 0 seconds if you don't know them <br>
-        Make sure there are <b>6 numbers</b> inside <b>square brackets</b></div></label>
-        <input class="u-full-width eventInput" type="text" placeholder="[2015, 4, 22, 13, 0, 0]" id="dateStartInput" pattern="[\[]\s*\d+\s*,\s*\d+\s*,\s*\d+\s*,\s*\d+\s*,\s*\d+\s*,\s*\d+\s*[\]]" required>
+        <!-- Required -->
+        <label for="dateStartInput">Start Date  <br>
+        <div class="exampleEvent">Format: [year, month, day, hour, minute] <br>
+        Example: "2015, 4, 22, 13, 30" == April 22, 2015, 1 PM, 30 minutes <br>
+        Use 24 hour clock. <br>
+        Minutes are optional. <br>
+        Make sure the <b>numbers</b> are seperated by <b>commas</b></div></label>
+        <input class="u-full-width eventInput" type="text" placeholder="2015, 4, 22, 13, 30" id="dateStartInput" required>
 
-        <label for="dateEndInput">End Date  </br>
-        <div class="exampleEvent">Format: [year, month, day, hour, minute, second] </br>
-        Example: [2015, 4, 22, 13, 0, 0] == April 22, 2015, 1 PM </br>
-        Use 0 minutes and 0 seconds if you don't know them <br>
-        Make sure there are <b>6 numbers</b> inside <b>square brackets</b></div></label>
-        <input class="u-full-width eventInput" type="text" placeholder="[2015, 4, 22, 13, 0, 0]" id="dateEndInput" pattern="[\[]\s*\d+\s*,\s*\d+\s*,\s*\d+\s*,\s*\d+\s*,\s*\d+\s*,\s*\d+\s*[\]]" required>
+        <!-- Required -->
+        <label for="dateEndInput">End Date  <br>
+        <div class="exampleEvent">Format: See above</div></label>
+        <input class="u-full-width eventInput" type="text" placeholder="2015, 4, 22, 14" id="dateEndInput" required>
 
-        <label for="moodInput">Mood </br>
-        <div class="exampleEvent">Example: [1] or [1, 2] <br>
-        Make sure the numbers are in the <b>range [1-4]</b> inside <b>square brackets</b></div></label>
-        <input class="u-full-width eventInput" type="text" placeholder="[1, 2]" id="moodInput" pattern="[\[]\s*([1-4]+\s*,\s*)*(\s*[1-4]+\s*)[\]]" required>
+        <!-- Required -->
+        <label for="moodInput">Mood <br>
+        <div class="exampleEvent">Example: "1" or "1, 2" <br>
+        Make sure the numbers are in the <b>range [1-4]</b> seperated by <b>commas</b></div></label>
+        <input class="u-full-width eventInput" type="text" placeholder="1, 2" id="moodInput" required>
 
-        <label for="hashTagsInput">Hashtags </br>
-        <div class="exampleEvent">Example: [#bbq, #food, #outdoor, #summer, #music] <br>
-        Make sure each hashtag <b> begins with # </b> inside <b>square brackets</b></div></label>
-        <input class="u-full-width eventInput" type="text" placeholder="[#bbq, #food, #outdoor, #summer, #music]" id="hashTagsInput" pattern="[\[]\s*(#\w+\s*,\s*)*(\s*#\w+\s*)[\]]" required>
+        <!-- Required -->
+        <label for="hashTagsInput">Hashtags <br>
+        <div class="exampleEvent">Example: "#bbq, #food, #outdoor, #summer, #music" <br>
+        Make sure each hashtag <b> begins with # </b> seperated by <b>commas</b></div></label>
+        <input class="u-full-width eventInput" type="text" placeholder="#bbq, #food, #outdoor, #summer, #music" id="hashTagsInput" required>
+        
+        <label for="commentsInput">Additional Comments <br>
+        <div class="exampleEvent">Additional comments about the Event. Not required. </div></label>
+        <input class="u-full-width eventInput" type="text" placeholder="" id="commentsInput">
+
         <br><br>
         <h5> *Please fill in one of the following: Website, Phone Number of Email* </h5>
-        <!-- regex credits to Jiwoo -->
 
         <label for="websiteInput">Website</label>
         <input class="u-full-width eventInput" type="text" placeholder="www.kevindial.com/is_the_best" id="websiteInput">
 
-        <label for="phoneInput">Phone Number </br>
+        <label for="phoneInput">Phone Number <br>
         <div class="exampleEvent">Format: 4161234567</div></label>
         <input class="u-full-width eventInput" type="number" placeholder="4161234567" id="phoneInput">
 
