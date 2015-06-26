@@ -71,7 +71,7 @@ $(document).ready(function() {
 
     // Save the event to Parse
     // var event = Parse.Object.extend("Events");
-    var event = Parse.Object.extend("EventsTest3"); // testing purposes
+    var event = Parse.Object.extend("Events1"); // testing purposes
     var eventObject = new event();
     eventObject.save(data, {
       success:function() {
@@ -129,7 +129,7 @@ function sampleEvent() {
     $("#moodInput").prop("value", "1, 2, 3");
     $("#hashTagsInput").prop("value", "#test, #test2,#test3");
     $("#commentsInput").prop("value", "This event occurs every sunday");
-    $("#websiteInput").prop("value", "www.kevindial.com");
+    $("#websiteInput").prop("value", "www.feeltrip.com");
     $("#phoneInput").prop("value", 4161234567);
     $("#emailInput").prop("value", "kk@kk.com");
   });
@@ -160,34 +160,34 @@ function animateLoadingButton() {
 }
 
 /* Simple test to save Parse objects */
-function testParseObject() {
-  // Save the event to Parse
-  // var event = Parse.Object.extend("Events");
-  var event = Parse.Object.extend("EventsTest3"); // testing purposes
-  var eventObject = new event();
+// function testParseObject() {
+//   // Save the event to Parse
+//   // var event = Parse.Object.extend("Events");
+//   var event = Parse.Object.extend("EventsTest3"); // testing purposes
+//   var eventObject = new event();
 
-  var data = {};
+//   var data = {};
 
-  var currentDate = new Date();
-  data.date1 = currentDate;
+//   var currentDate = new Date();
+//   data.date1 = currentDate;
 
-  // data.date2 = new Date([2015, 4, 22, 13]);
-  //                 yyyy, mm-1, dd, hh, mm, ss
-  data.date3 = new Date(2015, 3, 22, 1, 10, 20); // april 22, 1 am (EDT), 10 minutes, 20 seconds
+//   // data.date2 = new Date([2015, 4, 22, 13]);
+//   //                 yyyy, mm-1, dd, hh, mm, ss
+//   data.date3 = new Date(2015, 3, 22, 1, 10, 20); // april 22, 1 am (EDT), 10 minutes, 20 seconds
 
 
-  eventObject.save(data, {
-    success:function() {
-      console.log("succes!");
-      alert("saved!");
-    },
-    error:function(error) {
-      console.log("error!");
-      console.dir(error);
-      alert("error!");
-    }
-  });
-}
+//   eventObject.save(data, {
+//     success:function() {
+//       console.log("succes!");
+//       alert("saved!");
+//     },
+//     error:function(error) {
+//       console.log("error!");
+//       console.dir(error);
+//       alert("error!");
+//     }
+//   });
+// }
 
 /* Parse Input Dates into an array.
      Argument is date as a string.
