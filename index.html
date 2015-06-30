@@ -54,12 +54,15 @@
         <input class="u-full-width eventInput" type="number" placeholder="25" id="priceInput" required>
         
         <!-- Required -->
-        <label for="imageInput">Image</label>
+        <label for="imageInput">Image <br>
+        <div class="exampleEvent">
+        Image file name <b>cannot</b> contain any accented letters or symbols. Only use letters, numbers, spaces, underscores.
+        </div></label>
         <input class="u-full-width eventInput" type="file" id="imageInput" required>
 
         <!-- Required -->
         <label for="dateStartInput">Start Date  <br>
-        <div class="exampleEvent">Format: [year, month, day, hour, minute] <br>
+        <div class="exampleEvent">Format: year, month, day, hour, minute <br>
         Example: "2015, 4, 22, 13, 30" == April 22, 2015, 1 PM, 30 minutes <br>
         Use 24 hour clock. <br>
         Minutes are optional. <br>
