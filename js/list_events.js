@@ -56,6 +56,14 @@ $(document).ready(function() {
         var description = object.get('description');
         output += description + charCount(description) + list_sep();
 
+        // mood
+        var mood = object.get('mood').toString();
+        output += "Mood: " + mood + list_sep();
+
+        // hashtags
+        var hashtags = object.get('hashtags').toString();
+        output += "Hashtags: " + hashtags + charCount(hashtags);
+
 
 
 

@@ -84,15 +84,10 @@ $(document).ready(function() {
         endSubmit("saved!");
         alert("saved!");
 
-        // back to top of page
-        $("html, body").animate({scrollTop: 0}, 200);
+        // back to list view
+        window.location.href="list_events.html";
 
-        // reset values
-        $(':input','#eventForm')
-         .not(':button, :submit, :reset, :hidden')
-         .val('')
-         .removeAttr('checked')
-         .removeAttr('selected');
+        
       },
       error:function(error) {
         // console.log("error!");
