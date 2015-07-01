@@ -103,14 +103,28 @@ textarea {
     color: #6E6E6E;
 }
 
+.l_seperator {
+    font-weight: bold;
+    font-size: 15pt;
+}
 
 
+#container_list_events {
+    font-size: 10pt;
+    /*vertical-align: top;*/
+}
 
+#image_li{
+    /*height: 200px;*/
+}
 
+#nonImage_li{
+    /*height: 150px;*/
+}
 
-
-
-
+.list_image {
+    height:180px;
+}
 
 
 

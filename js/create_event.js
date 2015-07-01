@@ -77,8 +77,7 @@ $(document).ready(function() {
     }
 
     // Save the event to Parse
-    // var event = Parse.Object.extend("Events");
-    var event = Parse.Object.extend("Events1"); // testing purposes
+    var event = Parse.Object.extend("Kevin1");
     var eventObject = new event();
     eventObject.save(data, {
       success:function() {
