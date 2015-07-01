@@ -1,5 +1,7 @@
 // set page version to tell clients correct version
 var pageVersion = 6;
+var eventClass = "Events1";
+var Event = Parse.Object.extend(eventClass);
 
 // initialize Parse api
 var api = JSON.parse(config);
@@ -77,8 +79,7 @@ $(document).ready(function() {
     }
 
     // Save the event to Parse
-    var event = Parse.Object.extend("Kevin1");
-    var eventObject = new event();
+    var eventObject = new Event();
     eventObject.save(data, {
       success:function() {
       console.log("succes!");

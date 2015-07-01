@@ -1,5 +1,7 @@
 // set page version to tell clients correct version
 var pageVersion = 1;
+var eventClass = "Events1";
+var Event = Parse.Object.extend(eventClass);
 
 // initialize Parse api
 var api = JSON.parse(config);
@@ -13,7 +15,6 @@ $(document).ready(function() {
 
 
   // query for events
-  var Event = Parse.Object.extend("Kevin1");
   var query = new Parse.Query(Event);
 
   // query.equalTo("name", "test Beach party");
@@ -61,11 +62,24 @@ $(document).ready(function() {
 
         $("#event_list").append('<li class="nonImage_li">' + output + '</li>');
 
-        // output = "";
-        // output = '<a href="update_event.html">Update</a>'
+        output = "";
+        output = '<a id="' + object.id + '" href="#">Update</a>'
 
 
-        $("#event_list").append('<li> ________________________________________________________ </li>');
+        $("#event_list").append('<li class="nonImage_li">' + output + '</li>');
+
+
+        $("#event_list").append('<li> ___________________________________________________________________ </li>');
+
+        // add update event handler
+        $('#' + object.id).click(function() {
+          
+          // save event id to local storage
+          localStorage.setItem("event_id", this.id);
+          window.location.href="update_event.html";
+          return false;
+        });
+
 
 
       }

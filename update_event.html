@@ -1,0 +1,141 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>FeelTrip</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/skeleton.css">
+    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    <script src="js/vendor/parse-1.4.2.min.js"></script>
+    <script type="text/javascript" src="js/config.json"></script>
+
+      <!-- FONT
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link href="css/Raleway_font.css" rel="stylesheet" type="text/css">
+
+  </head>
+  <body>
+    <!--[if lt IE 8]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+
+
+    <div class="container" style="margin-top: 40px">
+
+
+      <a href="list_events.html">Go back to list of events</a>
+      <br>
+      <br>
+
+      <h2> Update Event</h2>
+      <h6 id="page-version"></h6>
+      <h6 id="event-id"></h6>
+
+      <form id="eventForm">
+
+        <!-- Required -->
+        <label for="nameInput">Event Name</label>
+        <input class="u-full-width eventInput" type="text" placeholder="Beach party" id="nameInput" required>
+        
+        <!-- Required -->
+        <label for="descriptionInput">Event Description</label>
+        <input class="u-full-width eventInput" type="text" placeholder="Let's have some fun in the sun! Bring your friends, family, dogs, beers, food, smiles!" id="descriptionInput" required>
+        
+        <!-- Required -->
+        <label for="addressInput">Address</label>
+        <input class="u-full-width eventInput" type="text" placeholder="909 Lake Shore Boulevard West, Toronto, ON M6K 3L3" id="addressInput" required>
+
+        <!-- Required -->
+        <label for="priceInput">Price</label>
+        <input class="u-full-width eventInput" type="number" placeholder="25" id="priceInput" required>
+        
+        <!-- Required -->
+        <label for="imageInput">Image <br>
+        <div class="exampleEvent">
+        Image file name <b>cannot</b> contain any accented letters or symbols. Only use letters, numbers, spaces, underscores.
+        </div></label>
+        <input class="u-full-width eventInput" type="file" id="imageInput" required>
+
+        <!-- Required -->
+        <label for="dateStartInput">Start Date  <br>
+        <div class="exampleEvent">
+
+        <b>TIMES ARE IN UTC TIMEZONE (WHICH IS +4 hours from our current time zone).</b> <br>
+        Do not update dates without Kevin. It is a very touchy value!!  </div></label>
+        <input class="u-full-width eventInput" type="datetime-local" id="dateStartInput" required>
+
+        <!-- Required -->
+        <label for="dateEndInput">End Date  <br>
+        <div class="exampleEvent">Format: See above</div></label>
+        <input class="u-full-width eventInput" type="datetime-local" id="dateEndInput" required>
+
+        <!-- Required -->
+        <label for="moodInput">Mood <br>
+        <div class="exampleEvent">Example: "1" or "1, 2" <br>
+        1 = Energetic (RED) <br>
+        2 = Active (ORANGE) <br>
+        3 = Fun (YELLOW) <br>
+        4 = Calm (BLUE) <br>
+        Make sure the numbers are in the <b>range [1-4]</b> seperated by <b>commas</b></div></label>
+        <input class="u-full-width eventInput" type="text" placeholder="1, 2" id="moodInput" required>
+
+        <!-- Required -->
+        <label for="hashTagsInput">Hashtags <br>
+        <div class="exampleEvent">Example: "#bbq, #food, #outdoor, #summer, #music" <br>
+        Make sure each hashtag <b> begins with # </b> seperated by <b>commas</b></div></label>
+        <input class="u-full-width eventInput" type="text" placeholder="#bbq, #food, #outdoor, #summer, #music" id="hashTagsInput" required>
+        
+        <label for="commentsInput">Additional Comments <br>
+        <div class="exampleEvent">Additional comments about the Event. Not required. </div></label>
+        <input class="u-full-width eventInput" type="text" placeholder="" id="commentsInput">
+
+        <br><br>
+        <h5> *Please fill in one of the following: Website, Phone Number of Email* </h5>
+
+        <label for="websiteInput">Website</label>
+        <input class="u-full-width eventInput" type="text" placeholder="www.feeltrip.com" id="websiteInput">
+
+        <label for="phoneInput">Phone Number <br>
+        <div class="exampleEvent">Format: 4161234567</div></label>
+        <input class="u-full-width eventInput" type="number" placeholder="4161234567" id="phoneInput">
+
+        <label for="emailInput">Email Address</label>
+        <input class="u-full-width eventInput" type="email" placeholder="test@test.com" id="emailInput">
+
+        <input class="button-primary" id="submit-button" type="submit" value="Save event">
+
+        <button id="loading-blank-button" style="width:300px;" disabled> &nbsp; </button>
+        <button id="loading-button" style="width:300px;" disabled> <div id="load-text"> Loading </div> </button>
+
+      </form>
+
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.3.min.js"><\/script>')</script>
+    <script src="js/plugins.js"></script>
+    <script src="js/update_event.js"></script>
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <script>
+      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+      e.src='https://www.google-analytics.com/analytics.js';
+      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+      ga('create','UA-XXXXX-X','auto');ga('send','pageview');
+    </script>
+  </body>
+</html>
