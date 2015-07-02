@@ -127,18 +127,18 @@ function endSubmit() {
 /* Fill in sample event info. Uses FILL IN SAMPLE button on UI. */
 function sampleEvent() {
   $("#sample-event").click(function() {
-    $("#nameInput").prop("value", "test Beach party");
-    $("#descriptionInput").prop("value", "Let's have some fun in the sun! Bring your friends, family, dogs, beers, food, smiles!");
-    $("#addressInput").prop("value", "909 Lake Shore Boulevard West, Toronto, ON M6K 3L3");
-    $("#priceInput").prop("value", 22);
-    $("#dateStartInput").prop("value", "2015, 4, 22, 13, 30");
-    $("#dateEndInput").prop("value", "2015, 4, 22, 14");
-    $("#moodInput").prop("value", "1, 2, 3");
-    $("#hashTagsInput").prop("value", "#test, #test2,#test3");
-    $("#commentsInput").prop("value", "This event occurs every sunday");
-    $("#websiteInput").prop("value", "www.feeltrip.com");
-    $("#phoneInput").prop("value", 4161234567);
-    $("#emailInput").prop("value", "kk@kk.com");
+    $("#nameInput").prop("value", "UofT Hackathon");
+    $("#descriptionInput").prop("value", "Let's get hacking!!");
+    $("#addressInput").prop("value", "Bahen Centre, University of Toronto, 40 Saint George Street, Toronto, ON M5S 2E4");
+    $("#priceInput").prop("value", 0);
+    $("#dateStartInput").prop("value", "2015, 8, 8, 12");
+    $("#dateEndInput").prop("value", "2015, 8, 8, 18");
+    $("#moodInput").prop("value", "3");
+    $("#hashTagsInput").prop("value", "#hackathon, #programming, #cs, #odor");
+    // $("#commentsInput").prop("value", "This event occurs every sunday");
+    $("#websiteInput").prop("value", "http://www.uofthacks.com/");
+    // $("#phoneInput").prop("value", 4161234567);
+    // $("#emailInput").prop("value", "kk@kk.com");
   });
 }
 
