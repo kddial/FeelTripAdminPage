@@ -1,6 +1,6 @@
 // set page version to tell clients correct version
-var pageVersion = 6;
-var eventClass = "Events1";
+var pageVersion = 7;
+var eventClass = "Events2";
 var Event = Parse.Object.extend(eventClass);
 
 // initialize Parse api
@@ -53,20 +53,26 @@ $(document).ready(function() {
     };
 
     // array input
-    data.mood = $("#moodInput").val().split(",").map(Number).filter(Boolean);
-    data.hashtags = $("#hashTagsInput").val().split(",").map(function(s) {return s.trim()}).filter(Boolean);
+    data.mood = $("#moodInput").val().split(/[ ,]+/).map(Number).filter(Boolean);
+    data.hashtags = $("#hashTagsInput").val().split(/[ ,]+/).map(function(s) {return s.trim()}).filter(Boolean);
 
     // date input
     //    pass in array as arugments
     //    source: http://stackoverflow.com/questions/11291206/passing-an-array-to-the-javascript-date-constructor-is-it-standard
-    var dateArray = parseDate($("#dateStartInput").val());
-    data.date_start = new (Function.prototype.bind.apply(
-                            Date, [null].concat(dateArray)));
+    // var dateArray = parseDate($("#dateStartInput").val());
+    // data.date_start = new (Function.prototype.bind.apply(
+    //                         Date, [null].concat(dateArray)));
 
-    dateArray = parseDate($("#dateEndInput").val());
+    // dateArray = parseDate($("#dateEndInput").val());
 
-    data.date_end = new (Function.prototype.bind.apply(
-                            Date, [null].concat(dateArray)));
+    // data.date_end = new (Function.prototype.bind.apply(
+    //                         Date, [null].concat(dateArray)));
+    
+
+
+    data.date_start = new Date($("#dateStartInput").val());
+
+    data.date_end = new Date($("#dateEndInput").val());
     
 
     // get the event picture
@@ -131,8 +137,9 @@ function sampleEvent() {
     $("#descriptionInput").prop("value", "Let's get hacking!!");
     $("#addressInput").prop("value", "Bahen Centre, University of Toronto, 40 Saint George Street, Toronto, ON M5S 2E4");
     $("#priceInput").prop("value", 0);
-    $("#dateStartInput").prop("value", "2015, 8, 8, 12");
-    $("#dateEndInput").prop("value", "2015, 8, 8, 18");
+    // var datee = new Date();
+    // $("#dateStartInput").prop("value", datee);
+    // $("#dateEndInput").prop("value", datee);
     $("#moodInput").prop("value", "3");
     $("#hashTagsInput").prop("value", "#hackathon, #programming, #cs, #odor");
     // $("#commentsInput").prop("value", "This event occurs every sunday");

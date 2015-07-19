@@ -1,6 +1,6 @@
 // set page version to tell clients correct version
-var pageVersion = 1;
-var eventClass = "Events1";
+var pageVersion = 2;
+var eventClass = "Events2";
 var Event = Parse.Object.extend(eventClass);
 
 // initialize Parse api
@@ -60,8 +60,8 @@ $(document).ready(function() {
     };
 
     // array input
-    currentEvent.set("mood", $("#moodInput").val().split(",").map(Number).filter(Boolean));
-    currentEvent.set("hashtags", $("#hashTagsInput").val().split(",").map(function(s) {return s.trim()}).filter(Boolean));
+    currentEvent.set("mood", $("#moodInput").val().split(/[ ,]+/).map(Number).filter(Boolean));
+    currentEvent.set("hashtags", $("#hashTagsInput").val().split(/[ ,]+/).map(function(s) {return s.trim()}).filter(Boolean));
 
     // date input
     currentEvent.set("date_start", new Date($("#dateStartInput").val()));

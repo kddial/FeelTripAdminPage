@@ -65,18 +65,12 @@
         <input class="u-full-width eventInput" type="file" id="imageInput" required>
 
         <!-- Required -->
-        <label for="dateStartInput">Start Date  <br>
-        <div class="exampleEvent">Format: year, month, day, hour, minute <br>
-        Example: "2015, 4, 22, 13, 30" == April 22, 2015, 1 PM, 30 minutes <br>
-        Use 24 hour clock. <br>
-        Minutes are optional. <br>
-        Make sure the <b>numbers</b> are seperated by <b>commas</b></div></label>
-        <input class="u-full-width eventInput" type="text" placeholder="2015, 4, 22, 13, 30" id="dateStartInput" required>
+        <label for="dateStartInput">Start Date  </label>
+        <input class="u-full-width eventInput" type="datetime-local" id="dateStartInput" required>
 
         <!-- Required -->
-        <label for="dateEndInput">End Date  <br>
-        <div class="exampleEvent">Format: See above</div></label>
-        <input class="u-full-width eventInput" type="text" placeholder="2015, 4, 22, 14" id="dateEndInput" required>
+        <label for="dateEndInput">End Date</label>
+        <input class="u-full-width eventInput" type="datetime-local" id="dateEndInput" required>
 
         <!-- Required -->
         <label for="moodInput">Mood <br>
