@@ -1,6 +1,6 @@
 // set page version to tell clients correct version
 var pageVersion = 7;
-var eventClass = "Events2";
+var eventClass = "Events1";
 var Event = Parse.Object.extend(eventClass);
 
 // initialize Parse api

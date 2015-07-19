@@ -1,6 +1,6 @@
 // set page version to tell clients correct version
 var pageVersion = 2;
-var eventClass = "Events2";
+var eventClass = "Events1";
 var Event = Parse.Object.extend(eventClass);
 
 // initialize Parse api
@@ -195,18 +195,6 @@ function animateLoadingButton() {
 }
 
 
-/* Parse Input Dates into an array.
-     Argument is date as a string.
-     Return date represented as an array of ints [yyyy, mm, dd, hh, mm, ss]
-*/
-function parseDate(inputDate) {
-
-    var dateArray = inputDate.split(",").map(Number).filter(Boolean);
-
-    // subtract 1 from month (0 == January, 1 == Feburary)
-    dateArray[1] = dateArray[1] - 1; 
-    return dateArray;
-}
 
 function convertDateToString(date) {
   var dateString = date.toISOString();
