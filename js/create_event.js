@@ -38,7 +38,6 @@ $(document).ready(function() {
     data.description = $("#descriptionInput").val();
     data.address = $("#addressInput").val();
     data.email = $("#emailInput").val();
-    data.comments = $("#commentsInput").val();
     data.website = $("#websiteInput").val();
     
     // number input
@@ -142,7 +141,6 @@ function sampleEvent() {
     // $("#dateEndInput").prop("value", datee);
     $("#moodInput").prop("value", "3");
     $("#hashTagsInput").prop("value", "#hackathon, #programming, #cs, #odor");
-    // $("#commentsInput").prop("value", "This event occurs every sunday");
     $("#websiteInput").prop("value", "http://www.uofthacks.com/");
     // $("#phoneInput").prop("value", 4161234567);
     // $("#emailInput").prop("value", "kk@kk.com");

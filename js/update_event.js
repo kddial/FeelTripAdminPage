@@ -45,7 +45,6 @@ $(document).ready(function() {
     currentEvent.set("description", $("#descriptionInput").val());
     currentEvent.set("address", $("#addressInput").val());
     currentEvent.set("email", $("#emailInput").val());
-    currentEvent.set("comments", $("#commentsInput").val());
     currentEvent.set("website", $("#websiteInput").val());
     
     // number input
@@ -148,7 +147,6 @@ function fillInEventInfo(eventId) {
 
       $("#moodInput").prop("value", object.get("mood"));
       $("#hashTagsInput").prop("value", object.get("hashtags"));
-      $("#commentsInput").prop("value", object.get("comments"));
       $("#websiteInput").prop("value", object.get("website"));
       $("#phoneInput").prop("value", object.get("phoneInput"));
       $("#emailInput").prop("value", object.get("email"));
